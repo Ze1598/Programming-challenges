@@ -34,6 +34,19 @@ def count_smileys(arr):
 	return len(re.findall(pattern, ''.join(arr)))
 
 
+# My own alternative
+'''
+def count_smileys(arr):
+	# Create the regular expression pattern to look for
+    regex = re.compile(r'[:;][-~]?[)D]')
+	# Then, using list comprehension, create a list that will\
+	# contain as many items as matches between the created regex\
+	# and the items from the input list (the items to fill the\
+	# created list are zeros (0)). To obtain the number of matches\
+	# simply return the length of the created list
+    return len([0 for smiley in arr if re.match(regex, smiley)])
+'''
+
 class Test(unittest.TestCase):
 	def test1(self):
 		self.assertEqual(count_smileys([]), 0)
